@@ -19,7 +19,7 @@ public class Products implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long product_id;
+	private Integer product_id;
 	private Double product_price;
 	private String book_isbn;
 	private String book_author;
@@ -32,14 +32,14 @@ public class Products implements Serializable {
 	private String food_ingredients;
 	private String ohter_product_details;
 	
-	@OneToMany (mappedBy = "product_id")
+	@OneToMany (mappedBy = "order_id")
 	private Set<Customer_Orders_Products> items = new HashSet<>();
 	
 	public Products() {
 		
 	}
 
-	public Products(Long product_id, Double product_price, String book_isbn, String book_author,
+	public Products(Integer product_id, Double product_price, String book_isbn, String book_author,
 			String book_publication_date, String book_title, String food_contains_yn, String food_name,
 			String food_description, String food_flavor, String food_ingredients, String ohter_product_details) {
 		super();
@@ -57,11 +57,11 @@ public class Products implements Serializable {
 		this.ohter_product_details = ohter_product_details;
 	}
 
-	public Long getProduct_id() {
+	public Integer getProduct_id() {
 		return product_id;
 	}
 
-	public void setProduct_id(Long product_id) {
+	public void setProduct_id(Integer product_id) {
 		this.product_id = product_id;
 	}
 

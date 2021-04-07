@@ -11,7 +11,7 @@ import com.prjvenda.entity.pk.OrderItemPK;
 public class Customer_Orders_Products {
 
 	@EmbeddedId
-	private OrderItemPK id = new OrderItemPK();
+	private OrderItemPK order_id = new OrderItemPK();
 	
 	private Integer quantity;
 	private String comments;
@@ -23,8 +23,8 @@ public class Customer_Orders_Products {
 	public Customer_Orders_Products(Customer_Orders order, Products product, Long product_id, Integer quantity, String comments) {
 		super();
 		
-		id.setCustomer_orders(order);
-		id.setProduct(product);
+		order_id.setCustomer_orders(order);
+		order_id.setProduct(product);
 		//this.order_id = order_id;
 		//this.product_id = product_id;
 		this.quantity = quantity;
@@ -33,19 +33,19 @@ public class Customer_Orders_Products {
 
 
 	public Customer_Orders getOrder() {
-		return id.getCustomer_orders();
+		return order_id.getCustomer_orders();
 	}
 	
 	public void setOrder(Customer_Orders order) {
-		id.setCustomer_orders(order);
+		order_id.setCustomer_orders(order);
 	}
 	
 	public Products getProduct() {
-		return id.getProduct();
+		return order_id.getProduct();
 	}
 	
 	public void setProducts(Products product) {
-		id.setProduct(product);
+		order_id.setProduct(product);
 	}
 
 	public Integer getQuantity() {
@@ -66,7 +66,7 @@ public class Customer_Orders_Products {
 
 	@Override
 	public String toString() {
-		return "Customer_Orders_Products [id=" + id + ", quantity=" + quantity + ", comments=" + comments + "]";
+		return "Customer_Orders_Products [id=" + order_id + ", quantity=" + quantity + ", comments=" + comments + "]";
 	}
 
 

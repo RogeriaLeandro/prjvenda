@@ -1,5 +1,7 @@
 package com.prjvenda.entity.pk;
 
+import java.io.Serializable;
+
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -8,9 +10,10 @@ import com.prjvenda.entity.Customer_Orders;
 import com.prjvenda.entity.Products;
 
 @Embeddable
-public class OrderItemPK {
+public class OrderItemPK implements Serializable {
 	
-	
+	private static final long serialVersionUID = 1L;
+
 	@ManyToOne
 	@JoinColumn(name = "order_id")
 	private Customer_Orders customer_orders;

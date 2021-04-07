@@ -24,7 +24,7 @@ public class Customer_Orders implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long order_id;
+	private Integer order_id;
 	
 	@ManyToOne
 	@JoinColumn(name = "costumer_id")
@@ -45,7 +45,7 @@ public class Customer_Orders implements Serializable{
 		
 	}
 
-	public Customer_Orders(Long order_id, Customer customer, Instant date_order_placed, Instant date_order_paid,
+	public Customer_Orders(Integer order_id, Customer customer, Instant date_order_placed, Instant date_order_paid,
 			Double der_total_order_price, String other_order_detais) {
 		super();
 		this.order_id = order_id;
@@ -56,11 +56,11 @@ public class Customer_Orders implements Serializable{
 		this.other_order_detais = other_order_detais;
 	}
 
-	public Long getOrder_id() {
+	public Integer getOrder_id() {
 		return order_id;
 	}
 
-	public void setOrder_id(Long order_id) {
+	public void setOrder_id(Integer order_id) {
 		this.order_id = order_id;
 	}
 

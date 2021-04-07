@@ -19,7 +19,7 @@ public class Customer implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long costumer_id;
+	private Integer costumer_id;
 	private String first_name;
 	private String middle_name;
 	private String last_name;
@@ -34,7 +34,7 @@ public class Customer implements Serializable{
 		
 	}
 
-	public Customer(Long costumer_id, String first_name, String middle_name, String last_name, String costumer_phone,
+	public Customer(Integer costumer_id, String first_name, String middle_name, String last_name, String costumer_phone,
 			String costumer_email, String other_costumer_details) {
 		super();
 		this.costumer_id = costumer_id;
@@ -46,11 +46,11 @@ public class Customer implements Serializable{
 		this.other_costumer_details = other_costumer_details;
 	}
 
-	public Long getCostumer_id() {
+	public Integer getCostumer_id() {
 		return costumer_id;
 	}
 
-	public void setCostumer_id(Long costumer_id) {
+	public void setCostumer_id(Integer costumer_id) {
 		this.costumer_id = costumer_id;
 	}
 
